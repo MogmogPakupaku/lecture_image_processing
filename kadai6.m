@@ -4,8 +4,8 @@
 % 課題作成にあたっては「Lenna」以外の画像を用いよ．
 
 clear; % 変数のオールクリア
-ORG=imread('Lenna.png'); % 原画像の入力
-ORG = rgb2gray(ORG);
+ORG=imread('http://www.v3wall.com/wallpaper/1920_1080/1009/1920_1080_201009260121042155462.jpg'); % 原画像の入力
+ORG = rgb2gray(ORG);%(白黒濃淡画像に変換)
 imagesc(ORG); colormap(gray); colorbar; % 画像の表示
 pause; % 一時停止
 
@@ -16,4 +16,3 @@ pause;
 
 IMG = dither(ORG); % ディザ法による二値化
 imagesc(IMG); colormap(gray); colorbar; % 画像の表示
-
