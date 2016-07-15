@@ -23,7 +23,7 @@ IMG = IMG0 + IMG1 + IMG2;%
 imagesc(IMG); colormap(gray); colorbar;  axis image;
 pause;
 
-% ８階調
+% ８階調画像生成
 IMG0 = ORG>32;
 IMG1 = ORG>64;
 IMG2 = ORG>96;
