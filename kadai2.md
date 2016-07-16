@@ -20,7 +20,7 @@ pause;
 
 2階調画像生成の結果を図２に示す．
 
-![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai02_1.jpg)  
+![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai2_1.jpg)  
 図2 1/2サンプリング
 
 同様に原画像を1/4サンプリングするには，画像を1/2倍に縮小した後，2倍に拡大すればよい．すなわち，
