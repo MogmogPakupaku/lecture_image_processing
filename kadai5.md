@@ -14,7 +14,7 @@ imagesc(ORG); axis image; % 画像の表示
 ここでは判別分散法を用いた画像の2値化を行う。　
 
 H = imhist(ORG); %ヒストグラムのデータを列ベクトルEに格納　　
-myu_T = mean(H);　
+myu_T = mean(H);　　
 max_val = 0;　　
 max_thres = 1;　　
 for i=1:255　　
@@ -45,3 +45,5 @@ pause;
 閾値128で2値化した結果を図3に示す。　
 ![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai3_128.jpg)  
 図3 閾値128での2値化
+　　
+図2と図3を見比べると図2では陸地部分の2値化が細かく行えているのがわかる。図3は陸地部分が暗くわかりにくいが小さい雲等の表示ができていることがわかる。
