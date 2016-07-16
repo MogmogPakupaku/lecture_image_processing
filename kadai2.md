@@ -11,17 +11,38 @@ imagesc(ORG); axis image; % 画像の表示
 ![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai2_gryorg.jpg)  
 図1 原画像
 
-2階調画像を生成するには閾値を設定し,それ未満を０,閾値以上を１と設定すればよい.  
-閾値を輝度値=128と設定した時いかのようなコードとなる。
+kadai2で2階調画像を生成した。このときの閾値を変更したときの変化を見る。
 
-IMG = ORG>128;%閾値  
-imagesc(IMG); colormap(gray); colorbar;  axis image;  
+閾値を輝度値=64と設定した時いかのようなコードとなる。
+
+IMG = ORG > 64; 
+imagesc(IMG); colormap(gray); colorbar;  
+pause; 
+
+閾値を64としたときの結果を図２に示す．  
+
+![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai3_2.jpg)  
+図2 閾値64の2階調画像 
+
+閾値を輝度値=96と設定した時いかのようなコードとなる。
+
+IMG = ORG > 96; 
+imagesc(IMG); colormap(gray); colorbar;  
+pause; 
+
+閾値を96としたときの結果を図３に示す．  
+
+![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai3_3.jpg)  
+図３ 閾値96の2階調画像 
+IMG = ORG > 128;  
+imagesc(IMG); colormap(gray); colorbar;  
+pause; 
+
+IMG = ORG > 192; 
+imagesc(IMG); colormap(gray); colorbar;  
 pause;  
 
-2階調画像生成の結果を図２に示す．
-
-![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai2_1.jpg)  
-図2 2階調画像  
+ 
 
 4階調画像を生成するには閾値を3つ設定し,それ未満を０,閾値以上を１としたものを足し合わせればよい.
 
