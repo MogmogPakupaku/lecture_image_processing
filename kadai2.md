@@ -21,7 +21,7 @@ pause;
 
 閾値を64としたときの結果を図２に示す．  
 
-![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai3_2.jpg)  
+![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai3_64.jpg)  
 図2 閾値64の2階調画像 
 
 閾値を輝度値=96と設定した時いかのようなコードとなる。
@@ -32,7 +32,7 @@ pause;
 
 閾値を96としたときの結果を図３に示す．  
 
-![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai3_3.jpg)  
+![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai3_96.jpg)  
 図３ 閾値96の2階調画像 
 IMG = ORG > 128;  
 imagesc(IMG); colormap(gray); colorbar;  
