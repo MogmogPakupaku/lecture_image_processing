@@ -11,61 +11,56 @@ imagesc(ORG); axis image; % 画像の表示
 ![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai2_gryorg.jpg)  
 図1 原画像
 
-kadai2で2階調画像を生成した。このときの閾値を変更したときの変化を見る。
-
-閾値を輝度値=64と設定した時いかのようなコードとなる。
-
-IMG = ORG > 64; 
-imagesc(IMG); colormap(gray); colorbar;  
-pause; 
-
-閾値を64としたときの結果を図２に示す．  
-
-![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai3_64.jpg)  
-図2 閾値64の2階調画像 
-
-閾値を輝度値=96と設定した時いかのようなコードとなる。
-
-IMG = ORG > 96; 
-imagesc(IMG); colormap(gray); colorbar;  
-pause; 
-
-閾値を96としたときの結果を図３に示す．  
-
-![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai3_96.jpg)  
-図３ 閾値96の2階調画像 
+2階調画像を生成するには閾値を設定し,それ未満を０,閾値以上を１としたものをひょうじすればよい.
 
 閾値を輝度値=128と設定した時いかのようなコードとなる。
 
-IMG = ORG > 128; 
+IMG = ORG > 128;  
 imagesc(IMG); colormap(gray); colorbar;  
 pause; 
 
-閾値を128としたときの結果を図４に示す．  
+閾値を128としたときの結果を図２に示す．  
 
-![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai3_128.jpg)  
-図４ 閾値128の2階調画像   
+![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai2_1.jpg)  
+図2 2階調画像 
 
- 
 
-閾値を輝度値=192と設定した時いかのようなコードとなる。
+4階調画像を生成するには閾値を3つ設定し,それ未満を０,閾値以上を１としたものを足し合わせればよい.
 
-IMG = ORG > 192; 
-imagesc(IMG); colormap(gray); colorbar;  
-pause; 
+IMG0 = ORG>64;  
+IMG1 = ORG>128;  
+IMG2 = ORG>192;  
+IMG = IMG0 + IMG1 + IMG2;% 
+imagesc(IMG); colormap(gray); colorbar;  axis image;  
+pause;   
 
-閾値を192としたときの結果を図５に示す．  
+ここでは閾値を64,128,192と設定し、それらの場合で2値化を行っている。これらを足し合わせることで  
+輝度値が        64以下を0;  
+         65以上128以下を1;  
+        129以上192以下を2;  
+        　      193以上を3とした4階調画像を生成することができる.生成結果を図３示す 。
 
-![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai3_192.jpg)  
-図５ 閾値192の2階調画像   
+![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai2_2.jpg)  
+図3 ４階調画像
 
-閾値を輝度値=216と設定した時いかのようなコードとなる。
+8階調画像を生成するには閾値を7つ設定し,それ未満を０,閾値以上を１としたものを足し合わせればよい.    
 
-IMG = ORG > 216; 
-imagesc(IMG); colormap(gray); colorbar;  
-pause; 
+% ８階調画像生成  
+IMG0 = ORG>32;    
+IMG1 = ORG>64;    
+IMG2 = ORG>96;    
+IMG3 = ORG>128;   
+IMG4 = ORG>160;   
+IMG5 = ORG>192;   
+IMG6 = ORG>224;   
+IMG = IMG0 + IMG1 + IMG2 + IMG3  + IMG4 + IMG5 + IMG6;%        
+imagesc(IMG); colormap(gray); colorbar; axis image;   
 
-閾値を216としたときの結果を図６に示す．  
+8階調画像生成結果を図４示す.
 
-![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai3_216.jpg)  
-図６ 閾値216の2階調画像   
+![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai2_3.jpg)  
+図4 8階調画像
+
+任意の階調画像を生成するには、閾値を階調数-１個設定しそれぞれの場合で2値化を行い、それらを足し合わせることで実現できる．　　
+
+生成した画像を見ると4階調において雲の内部で擬似輪郭が発生しているのがわかる。
