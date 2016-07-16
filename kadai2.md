@@ -33,9 +33,9 @@ imagesc(IMG); colormap(gray); colorbar;  axis image;
 pause;
 
 ここでは閾値を64,128,192と設定し、それらの場合で2値化を行っている。これらを足し合わせることで
-輝度値が        64以下を0
-         65以上128以下を1
-        129以上192以下を2
+輝度値が        64以下を0;
+         65以上128以下を1;
+        129以上192以下を2;
         　      193以上を3とした4階調画像を生成することができる生成結果を図３示す 。
 
 ![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai2_2.jpg)  
