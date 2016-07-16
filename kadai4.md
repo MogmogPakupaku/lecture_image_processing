@@ -32,7 +32,7 @@ imhist(ORG);　　
 ![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai4_yukityan.jpg)  
 図4 ヒストグラム
 
-
+分布がまったく異なることがわかる。
 
 
 
