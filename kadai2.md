@@ -6,17 +6,17 @@ ORG=imread('http://www.v3wall.com/wallpaper/1920_1080/1009/1920_1080_20100926012
 ORG = rgb2gray(ORG); colormap(gray); colorbar;%rgb2gray()でグレースケール化  
 imagesc(ORG); axis image; % 画像の表示  
 
-によって，原画像を読み込み，グレースケール化を行い、表示した結果を図１に示す．
+によって，原画像を読み込み，グレースケール化を行い、表示した結果を図１に示す．  
 
 ![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai2_gryorg.jpg)  
 図1 原画像
 
-2階調画像を生成するには閾値を設定し,それ未満を０,閾値以上を１と設定すればよい.
+2階調画像を生成するには閾値を設定し,それ未満を０,閾値以上を１と設定すればよい.  
 閾値を輝度値=128と設定した時いかのようなコードとなる。
 
-IMG = ORG>128;%閾値
-imagesc(IMG); colormap(gray); colorbar;  axis image;
-pause;
+IMG = ORG>128;%閾値  
+imagesc(IMG); colormap(gray); colorbar;  axis image;  
+pause;  
 
 2階調画像生成の結果を図２に示す．
 
@@ -25,17 +25,17 @@ pause;
 
 4階調画像を生成するには閾値を3つ設定し,それ未満を０,閾値以上を１としたものを足し合わせればよい.
 
-IMG0 = ORG>64;
-IMG1 = ORG>128;
-IMG2 = ORG>192;
-IMG = IMG0 + IMG1 + IMG2;%
-imagesc(IMG); colormap(gray); colorbar;  axis image;
-pause;
+IMG0 = ORG>64;  
+IMG1 = ORG>128;  
+IMG2 = ORG>192;  
+IMG = IMG0 + IMG1 + IMG2;% 
+imagesc(IMG); colormap(gray); colorbar;  axis image;  
+pause;   
 
-ここでは閾値を64,128,192と設定し、それらの場合で2値化を行っている。これらを足し合わせることで
-輝度値が        64以下を0;
-         65以上128以下を1;
-        129以上192以下を2;
+ここでは閾値を64,128,192と設定し、それらの場合で2値化を行っている。これらを足し合わせることで  
+輝度値が        64以下を0;  
+         65以上128以下を1;  
+        129以上192以下を2;  
         　      193以上を3とした4階調画像を生成することができる生成結果を図３示す 。
 
 ![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai2_2.jpg)  
