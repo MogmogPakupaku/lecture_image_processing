@@ -21,7 +21,7 @@ pause;
 2階調画像生成の結果を図２に示す．
 
 ![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai2_1.jpg)  
-図2 1/2サンプリング
+図2 2階調画像  
 
 4階調画像を生成するには閾値を3つ設定し,それ未満を０,閾値以上を１としたものを足し合わせればよい.
 
@@ -36,25 +36,27 @@ pause;
 輝度値が        64以下を0;  
          65以上128以下を1;  
         129以上192以下を2;  
-        　      193以上を3とした4階調画像を生成することができる生成結果を図３示す 。
+        　      193以上を3とした4階調画像を生成することができる.生成結果を図３示す 。
 
 ![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai2_2.jpg)  
-図3 1/4サンプリング
+図3 ４階調画像
 
-1/8から1/32サンプリングは，
+8階調画像を生成するには閾値を7つ設定し,それ未満を０,閾値以上を１としたものを足し合わせればよい.    
 
-IMG = imresize(ORG,0.5); % 画像の縮小  
-IMG2 = imresize(IMG,2,'box'); % 画像の拡大
+% ８階調画像生成  
+IMG0 = ORG>32;    
+IMG1 = ORG>64;    
+IMG2 = ORG>96;    
+IMG3 = ORG>128;   
+IMG4 = ORG>160;   
+IMG5 = ORG>192;   
+IMG6 = ORG>224;   
+IMG = IMG0 + IMG1 + IMG2 + IMG3  + IMG4 + IMG5 + IMG6;%        
+imagesc(IMG); colormap(gray); colorbar; axis image;   
 
-を繰り返す．サンプリングの結果を図４～６に示す．
+8階調画像生成結果を図４示す.
 
-![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai01_3.jpg)  
-図4 1/8サンプリング
-
-![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai01_4.jpg)  
-図5 1/16サンプリング
-
-![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai01_5.jpg)  
-図6 1/32サンプリング
+![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai2_3.jpg)  
+図4 8階調画像
 
 このようにサンプリング幅が大きくなると，モザイク状のサンプリング歪みが発生する．
