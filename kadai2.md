@@ -59,4 +59,6 @@ imagesc(IMG); colormap(gray); colorbar; axis image;
 ![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai2_3.jpg)  
 図4 8階調画像
 
-このようにサンプリング幅が大きくなると，モザイク状のサンプリング歪みが発生する．
+任意の階調画像を生成するには、閾値を階調数-１個設定しそれぞれの場合で2値化を行い、それらを足し合わせることで実現できる．　　
+
+生成した画像を見ると4階調において雲の内部で擬似輪郭が発生しているのがわかる。
