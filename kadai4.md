@@ -18,5 +18,21 @@ imhist(ORG);　　
 と記述すればよい。ヒストグラムを図2に示す。
 
 ![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai4_1.jpg)  
-図2 原画像
+図2 風景画ヒストグラム
+
+この画像は比較的、輝度値が低い方に偏っていることがわかる。　　
+
+次に画像を見て輝度値が高そうなもののヒストグラムを観察する。　　
+ここでは白毛馬として有名であったのユキチャンの画像を使用する。画像を図3にヒストグラムを図４にそれぞれ示す。　　
+画像URL：http://poclog.cocolog-nifty.com/book/images/horse/blue/blue_0522026.jpg　　
+
+![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/yukityan.jpg)  
+図3 白毛馬
+
+![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai4_yukityan.jpg)  
+図4 ヒストグラム
+
+
+
+
 
