@@ -23,14 +23,22 @@ pause;
 ![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai2_1.jpg)  
 図2 1/2サンプリング
 
-同様に原画像を1/4サンプリングするには，画像を1/2倍に縮小した後，2倍に拡大すればよい．すなわち，
+4階調画像を生成するには閾値を3つ設定し,それ未満を０,閾値以上を１としたものを足し合わせればよい.
 
-IMG = imresize(ORG,0.5); % 画像の縮小  
-IMG2 = imresize(IMG,2,'box'); % 画像の拡大
+IMG0 = ORG>64;
+IMG1 = ORG>128;
+IMG2 = ORG>192;
+IMG = IMG0 + IMG1 + IMG2;%
+imagesc(IMG); colormap(gray); colorbar;  axis image;
+pause;
 
-とする．1/4サンプリングの結果を図３に示す．
+ここでは閾値を64,128,192と設定し、それらの場合で2値化を行っている。これらを足し合わせることで
+輝度値が        64以下を0
+         65以上128以下を1
+        129以上192以下を2
+        　      193以上を3とした4階調画像を生成することができる生成結果を図３示す 。
 
-![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai01_2.jpg)  
+![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai2_2.jpg)  
 図3 1/4サンプリング
 
 1/8から1/32サンプリングは，
