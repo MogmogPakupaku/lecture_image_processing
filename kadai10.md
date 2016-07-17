@@ -18,7 +18,7 @@ IMG = edge(ORG,'prewitt'); % エッジ抽出（プレウィット法）
 imagesc(IMG); colormap('gray'); colorbar;% 画像表示  
 pause; % 一時停止  
 
-結果を図2に示す
+結果を図2に示す　　
 ![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai10_prewitt.jpg)  
 図2 プレウィット法によるエッジ抽出
 
@@ -27,7 +27,7 @@ IMG = edge(ORG,'sobel'); % エッジ抽出（ソベル法）
 imagesc(IMG); colormap('gray'); colorbar;% 画像表示  
 pause; % 一時停止  
 
-結果を図3に示す
+結果を図3に示す　　
 ![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai10_sobel.jpg)  
 図3 ソベル法によるエッジ抽出
 
@@ -36,6 +36,8 @@ IMG = edge(ORG,'canny'); % エッジ抽出（キャニー法）
 imagesc(IMG); colormap('gray'); colorbar;% 画像表示  
 pause; % 一時停止  
 
-結果を図4に示す
+結果を図4に示す　　
 ![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai10_canny.jpg)  
 図4 キャニー法によるエッジ抽出
+
+結果を比較すると、プレウィット法とソベル法は陸地と水面の境目が輪郭として分かりやすく、似たような抽出結果となった。キャニー法では陸地と水面の輪郭はわかりにくいが、雲の輪郭がはっきりと抽出できていることがわかる。
