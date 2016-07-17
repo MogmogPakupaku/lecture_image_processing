@@ -18,7 +18,7 @@ IMG = ORG > 128; % 閾値128で二値化
 imagesc(IMG); colormap(gray); colorbar; % 画像の表示  
 
 閾値を輝度値128に設定し、2値化を行った結果を図2に示す。  
-![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai8_128.jpg)
+![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai8_128.jpg)  
 図2 2値化画像  
 
 ・ラベル付け
@@ -28,5 +28,5 @@ IMG = bwlabeln(IMG);
 imagesc(IMG); colormap(jet); colorbar; % 画像の表示  
 pause;  
 
-![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai8_label.jpg)
+![原画像](https://github.com/MogmogPakupaku/lecture_image_processing/blob/master/image/kadai8_label.jpg)  
 図3 ラベル付けを行った画像 
